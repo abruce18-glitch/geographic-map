@@ -1,0 +1,212 @@
+/* Global styles */
+:root {
+  --sky-blue: oklch(0.6843 0.1303 220.79);
+  --bright-blue: oklch(0.512 0.1771 256.87);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--sky-blue) 100%
+  );
+
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--sky-blue) 100%
+  );
+
+  --pill-accent: var(--bright-blue);
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+}
+
+h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  border-radius: 2.75rem 2.75rem 0 0;
+  background-color: var(--orange-red);
+  margin:0;
+}
+
+p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+section {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
+
+section h1 {
+  margin-top: 1.75rem;
+}
+
+section p {
+  margin-top: 1.5rem;
+}
+
+/* Main navigation */
+#main-nav-bar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 6px -8px rgba(0,0,0,0.3);
+}
+
+.logo {
+  max-width: 4.6rem;
+}
+
+.vertical-divider {
+  width: 0.1rem;
+  height: 4rem;
+  background: var(--red-to-pink-to-purple-vertical-gradient);
+  margin-inline: 0.5rem;
+}
+
+.pill-group {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+/* Main navigation buttons */
+.pill {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+  color: var(--pill-accent);
+  padding-inline: 0.75rem;
+  padding-block: 0.375rem;
+  border-radius: 2.75rem;
+  transition: background 0.3s ease;
+}
+
+.pill:hover {
+  background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+}
+
+/* Footer navigation */
+#footer-nav-bar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: 3rem;
+  box-shadow: 0 -8px 6px -8px rgba(0,0,0,0.3);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.73rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  color: var(--pill-accent);
+  fill: var(--gray-400);
+  text-decoration: none;
+  transition: fill 0.3s ease;
+}
+
+/* Main row/column layout */
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  align-content: center;
+  gap:3rem;
+  width: 80rem;
+  max-width: 100%;
+  margin:0 auto;
+}
+
+.col {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 2.75rem;
+  padding: 5rem 1rem 1rem 1rem;
+  background: color-mix(in srgb, var(--bright-blue) 5%, transparent);
+}
+
+.col:first-of-type {
+  flex: 2 1 0;
+}
+
+.col svg {
+  width: 100%;
+  height: auto;
+}
+
+.col-group {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+}
+
+.col-group h3 {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.col-group h3:after {
+  content: "\00a0";
+}
+
+.col-group p {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
